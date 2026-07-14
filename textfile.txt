@@ -1,0 +1,740 @@
+Prompt
+
+Create a production-ready Shopify App called WhatsApp Chat Button using the latest Shopify App architecture.
+
+The app should use:
+
+Shopify App Bridge
+Polaris
+Remix (latest Shopify template)
+Shopify App Embed Block
+Theme App Extension
+Shopify Admin API
+Embedded App
+App Configuration through Admin UI
+
+The app should allow merchants to add a floating WhatsApp button anywhere on their storefront without editing theme code.
+
+Features
+
+The app must include:
+
+Floating WhatsApp Button
+
+Display a floating WhatsApp button on every page.
+
+Support:
+
+Desktop
+Mobile
+Responsive layouts
+
+The merchant can choose:
+
+Bottom Right
+Bottom Left
+
+with adjustable offsets.
+
+Button Click
+
+On click:
+
+Open
+
+https://wa.me/PHONE_NUMBER?text=MESSAGE
+
+where
+
+PHONE_NUMBER
+
+is merchant-configurable.
+
+MESSAGE
+
+must support variables.
+
+Example:
+
+Hi, I'm interested in {{product_title}}
+
+If on homepage:
+
+Hi, I have a question.
+
+Dynamic Variables
+
+Support:
+
+{{shop_name}}
+
+{{product_title}}
+
+{{product_url}}
+
+{{product_price}}
+
+{{collection_title}}
+
+{{page_title}}
+
+{{customer_name}}
+
+{{customer_email}}
+
+{{cart_total}}
+
+{{cart_items}}
+
+{{current_url}}
+
+Variables should automatically resolve using Liquid and JavaScript.
+
+Theme App Extension
+
+Use Theme App Extension.
+
+Create:
+
+App Embed
+
+NOT Theme Block.
+
+Merchant enables:
+
+Customize
+
+↓
+
+App Embeds
+
+↓
+
+WhatsApp Chat Button
+
+The embed should inject:
+
+CSS
+
+JS
+
+Liquid
+
+without modifying theme files.
+
+Admin Settings
+
+Create complete settings page.
+
+WhatsApp
+
+Phone Number
+
+Country Code
+
+Validation
+
+Example
+
++91XXXXXXXXXX
+
+Welcome Message
+
+Textarea
+
+Supports variables.
+
+Live preview.
+
+Button Style
+
+Choose:
+
+Circle
+
+Rounded
+
+Square
+
+Pill
+
+Button Size
+
+Small
+
+Medium
+
+Large
+
+Custom px
+
+Icon
+
+Options
+
+Official WhatsApp
+
+Outline
+
+Filled
+
+White
+
+Black
+
+Upload SVG
+
+Button Color
+
+Color Picker
+
+Default:
+
+#25D366
+
+Icon Color
+
+Color Picker
+
+Hover Color
+
+Color Picker
+
+Shadow
+
+None
+
+Small
+
+Medium
+
+Large
+
+Custom
+
+Border Radius
+
+Slider
+
+0–50px
+
+Animation
+
+None
+
+Pulse
+
+Bounce
+
+Shake
+
+Float
+
+Heartbeat
+
+Rotate
+
+Animation Speed
+
+Position
+
+Bottom Right
+
+Bottom Left
+
+Top Right
+
+Top Left
+
+Offsets
+
+Desktop
+
+Bottom
+
+Side
+
+Mobile
+
+Bottom
+
+Side
+
+Z-index
+
+Custom number
+
+Default
+
+999999
+
+Visibility
+
+Desktop Only
+
+Mobile Only
+
+All Devices
+
+Show On
+
+Homepage
+
+Products
+
+Collections
+
+Blog
+
+Articles
+
+Pages
+
+Cart
+
+Search
+
+404
+
+Password Page
+
+Customer Pages
+
+Checkboxes.
+
+Hide On URLs
+
+Textarea
+
+Example
+
+/cart
+
+/checkout
+
+/pages/contact
+
+Supports wildcard.
+
+Show Only URLs
+
+Textarea
+
+Supports wildcard.
+
+Delay
+
+Show after
+
+0–60 seconds
+
+Scroll Trigger
+
+Show after scrolling
+
+0–100%
+
+Exit Intent
+
+Desktop
+
+Optional
+
+Auto Open Chat
+
+Optional
+
+after X seconds
+
+Notification Badge
+
+Enable
+
+Small red dot
+
+Unread bubble
+
+Custom text
+
+Example
+
+Chat
+
+Help
+
+1
+
+99+
+
+Online Status
+
+Show
+
+Online
+
+Offline
+
+Custom text
+
+Business Hours
+
+Enable
+
+Timezone
+
+Days
+
+Start
+
+End
+
+Outside hours:
+
+Hide button
+
+or
+
+Show Offline
+
+Tooltip
+
+Enable
+
+Text
+
+Example
+
+Need Help?
+
+Placement
+
+Top
+
+Left
+
+Right
+
+Bottom
+
+Tooltip Delay
+
+Seconds
+
+Tooltip Color
+
+Background
+
+Text
+
+Sound
+
+Optional
+
+Notification sound
+
+GDPR
+
+Show consent
+
+Before opening WhatsApp
+
+Analytics
+
+Track:
+
+Clicks
+
+Device
+
+Country
+
+Referrer
+
+Product
+
+Page
+
+Date
+
+Store in app database.
+
+Dashboard:
+
+Today's clicks
+
+Weekly
+
+Monthly
+
+Top Products
+
+Top Pages
+
+Multiple Agents
+
+Support multiple WhatsApp numbers.
+
+Rules:
+
+Homepage
+
+→ Agent A
+
+Products
+
+→ Agent B
+
+Collections
+
+→ Agent C
+
+Round Robin
+
+Random
+
+Business Hours
+
+QR Code
+
+Generate QR code.
+
+Merchant can download PNG.
+
+Custom CSS
+
+Textarea
+
+Inject safely.
+
+Custom JS
+
+Optional
+
+Sandboxed.
+
+Theme Settings
+
+Inside App Embed schema expose settings:
+
+Enable
+
+Phone Number
+
+Message
+
+Color
+
+Position
+
+Animation
+
+Button Size
+
+Tooltip
+
+Visibility
+
+Shadow
+
+Border Radius
+
+Hide Pages
+
+Show Pages
+
+Delay
+
+Scroll Trigger
+
+Business Hours
+
+Custom CSS
+
+These settings should sync with Admin configuration.
+
+Localization
+
+Support:
+
+English
+
+Spanish
+
+French
+
+German
+
+Arabic
+
+Hindi
+
+Use Shopify locale files.
+
+Accessibility
+
+ARIA labels
+
+Keyboard navigation
+
+Screen reader support
+
+WCAG AA
+
+Performance
+
+Lazy load JavaScript.
+
+Minified assets.
+
+No jQuery.
+
+No blocking scripts.
+
+Load under 20KB gzip if possible.
+
+SEO
+
+No indexable links.
+
+No CLS.
+
+No layout shift.
+
+Mobile Optimization
+
+Safe area support
+
+iPhone
+
+Android
+
+Foldable devices
+
+JavaScript
+
+Use modern ES modules.
+
+Avoid globals.
+
+Namespace everything.
+
+CSS
+
+Use CSS variables.
+
+Dark mode support.
+
+No conflicts with themes.
+
+Scoped styles.
+
+Liquid
+
+Follow Shopify best practices.
+
+No deprecated APIs.
+
+Compatible with Online Store 2.0.
+
+Data Storage
+
+Store merchant settings using Shopify app metafields or database linked to the shop.
+
+Persist all settings.
+
+Admin Dashboard
+
+Display:
+
+Total Clicks
+
+Today's Clicks
+
+Weekly Clicks
+
+Monthly Clicks
+
+CTR
+
+Top Pages
+
+Top Products
+
+Device Breakdown
+
+Country Breakdown
+
+Recent Clicks
+
+Export CSV
+
+Theme Extension Structure
+
+Include complete folder structure.
+
+Example:
+
+extensions/
+    whatsapp-chat/
+        assets/
+            whatsapp.js
+            whatsapp.css
+        blocks/
+        snippets/
+        locales/
+        app-embed.liquid
+        shopify.extension.toml
+
+Also include:
+
+app/
+routes/
+components/
+db/
+prisma/
+webhooks/
+Security
+
+Validate all inputs.
+
+Escape Liquid output.
+
+Sanitize custom CSS.
+
+Prevent XSS.
+
+Code Quality
+
+Use TypeScript.
+
+ESLint.
+
+Prettier.
+
+Reusable React components.
+
+Proper hooks.
+
+Well-commented code.
+
+Deliverables
+
+Generate:
+
+Complete Shopify App
+Theme App Extension
+App Embed
+Polaris Admin UI
+Remix routes
+Prisma schema
+Database models
+App Bridge integration
+Settings synchronization
+Analytics implementation
+Localization files
+Production-ready code
+Installation instructions
+Deployment guide
+Shopify Partner submission readiness
+
+The code should follow the latest Shopify App best practices (2026), require no manual theme editing, work with Online Store 2.0 themes, and be optimized for performance, accessibility, and maintainability.

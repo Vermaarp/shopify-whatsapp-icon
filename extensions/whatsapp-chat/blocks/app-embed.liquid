@@ -1,0 +1,24 @@
+<div id="whatsapp-chat-button"
+  data-product-title="{{ product.title | escape }}"
+  data-product-url="{{ product.url }}"
+  data-product-price="{{ product.price | money_without_currency }}"
+  data-shop-name="{{ shop.name | escape }}"
+  data-current-url="{{ request.path }}"
+  data-shop-domain="{{ shop.domain }}"
+  data-custom-icon-url="{{ 'whatsapp.png' | asset_url }}"
+></div>
+
+{% schema %}
+{
+  "name": "WhatsApp Chat",
+  "target": "body",
+  "stylesheet": "whatsapp.css",
+  "javascript": "whatsapp.js",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "All customization options for this widget are located in the WhatsApp Chat app dashboard."
+    }
+  ]
+}
+{% endschema %}

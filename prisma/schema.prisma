@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
+// enough when changing adapters.
+// See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+model Session {
+  id                  String    @id
+  shop                String
+  state               String
+  isOnline            Boolean   @default(false)
+  scope               String?
+  expires             DateTime?
+  accessToken         String
+  userId              BigInt?
+  firstName           String?
+  lastName            String?
+  email               String?
+  accountOwner        Boolean   @default(false)
+  locale              String?
+  collaborator        Boolean?  @default(false)
+  emailVerified       Boolean?  @default(false)
+  refreshToken        String?
+  refreshTokenExpires DateTime?
+}
+
+model WhatsAppSettings {
+  id              String   @id @default(uuid())
+  shop            String   @unique
+  isActive        Boolean  @default(true)
+  phoneNumber     String?
+  welcomeMessage  String?
+  buttonStyle     String   @default("circle")
+  buttonSize      String   @default("medium")
+  icon            String   @default("whatsapp")
+  buttonColor     String   @default("#25D366")
+  iconColor       String   @default("#FFFFFF")
+  hoverColor      String   @default("#128C7E")
+  shadow          String   @default("medium")
+  borderRadius    Int      @default(50)
+  animation       String   @default("none")
+  position        String   @default("bottom-right")
+  offsetBottomDesktop Int  @default(20)
+  offsetSideDesktop   Int  @default(20)
+  offsetBottomMobile  Int  @default(20)
+  offsetSideMobile    Int  @default(20)
+  zIndex          Int      @default(999999)
+  visibility      String   @default("all")
+  showOnPages     String?  // JSON string
+  hideOnUrls      String?
+  showOnlyUrls    String?
+  delaySeconds    Int      @default(0)
+  scrollTrigger   Int      @default(0)
+  tooltipEnabled  Boolean  @default(true)
+  tooltipText     String   @default("Need Help?")
+  tooltipBgColor  String   @default("#FFFFFF")
+  tooltipTextColor String  @default("#000000")
+  customCss       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Analytics {
+  id        String   @id @default(uuid())
+  shop      String
+  page      String?
+  product   String?
+  device    String?
+  country   String?
+  referrer  String?
+  createdAt DateTime @default(now())
+}
